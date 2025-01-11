@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Blog</h1>
+    </header>
+    <main>
+        <section id="posts">
+            {% for post_id, post in posts.items() %}
+            <article class="post">
+                <h2><a href="/post/{{ post_id }}">{{ post.title }}</a></h2>
+                <p>Posted on {{ post.date }}</p>
+                <p>{{ post.content[:50] }}...</p>
+            </article>
+            {% endfor %}
+        </section>
+        
+    </main>
+    <footer>
+        <p>© 2025 My Blog</p>
+    </footer>
+</body>
+</html>
